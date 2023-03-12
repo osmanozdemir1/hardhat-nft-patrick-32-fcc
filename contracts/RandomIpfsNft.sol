@@ -97,7 +97,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable {
         uint256 sum = 0;
         uint256[3] memory chanceArray = getChanceArray();
         for (uint256 i = 0; i < chanceArray.length; i++) {
-            if(moddedRng >= sum && moddedRng < sum + chanceArray[i]){
+            if(moddedRng >= sum && moddedRng < chanceArray[i]){
                 return Breed(i);
             }
             sum += chanceArray[i];
